@@ -73,7 +73,7 @@ const getWeekDays = (locale: string, weekStart: TWeekStart) => {
   return names
 }
 
-const firstDay = (new Intl.Locale(locale.value) as any)?.weekInfo?.firstDay || 1
+const firstDay = (new Intl.Locale(locale.value) as any)?.getWeekInfo()?.firstDay || 1
 const weekStart = (firstDay % 7) as TWeekStart
 
 const weekDays = getWeekDays(locale.value, weekStart)
